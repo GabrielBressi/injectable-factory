@@ -27,21 +27,21 @@ public class PaymentFactoryImplTest {
             PaymentService paymentService = paymentFactory.create(PaymentMethod.CREDIT_CARD);
             assertInstanceOf(CreditCardPaymentService.class, paymentService);
         } catch (ClassNotFoundException e) {
-            fail("ClassNotFoundException should be thrown");
+            fail("ClassNotFoundException should not  be thrown");
         }
 
         try {
             PaymentService paymentService = paymentFactory.create(PaymentMethod.PAYPAL);
             assertInstanceOf(PayPalPaymentService.class, paymentService);
         } catch (ClassNotFoundException e) {
-            fail("ClassNotFoundException should be thrown");
+            fail("ClassNotFoundException should not  be thrown");
         }
 
         try {
             PaymentService paymentService = paymentFactory.create(PaymentMethod.GOOGLE_PAY);
             assertInstanceOf(GooglePayPaymentService.class, paymentService);
         } catch (ClassNotFoundException e) {
-            fail("ClassNotFoundException should be thrown");
+            fail("ClassNotFoundException should not  be thrown");
         }
     }
 
